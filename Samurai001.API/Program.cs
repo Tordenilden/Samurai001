@@ -9,6 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+////////////////////////////////////////////////////////////////////
+builder.Services.AddScoped<IGeneric<Horse>, GenericRepo<Horse>>();
+
+///////////////////////////////////////////////////////////////////
+
+
 builder.Services.AddScoped<IRepository<Samurai>, GenericRepository<Samurai>>();
 builder.Services.AddScoped<IRepository<Battle>, GenericRepository<Battle>>();
 builder.Services.AddScoped<IRepository<Horse>, GenericRepository<Horse>>();
