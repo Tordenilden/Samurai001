@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Samurai001.Repository.Interfaces
 {
-    internal interface ISamuraiRepository
+    public interface ISamuraiRepository
     {
         Samurai Create(Samurai samurai);
         Samurai CreateComplex(Samurai samurai);

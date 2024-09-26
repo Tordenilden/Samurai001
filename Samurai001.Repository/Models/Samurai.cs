@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Samurai001.Repository.Models
@@ -15,11 +16,19 @@ namespace Samurai001.Repository.Models
     public int Age { get; set; }
     //version 6.0
     public List<Battle> Battles { get; set; } = new List<Battle>();
-    //version 5.0
-    //public List<BattleSamurai> BattleSamurais { get; set; } = new List<BattleSamurai>();
-    //public List<Horse> Horses { get; set; } = new List<Horse>();
-    public int HorseId { get; set; } // FK to Samurai Table
-    public Horse Horse { get; set; }  // Navigation property = new Horse();
+        //version 5.0
+        //public List<BattleSamurai> BattleSamurais { get; set; } = new List<BattleSamurai>();
+        //public List<Horse> Horses { get; set; } = new List<Horse>();
+
+
+
+        //true && false - & bitwise...
+    [JsonIgnore(Condition = 
+            JsonIgnoreCondition.WhenWritingDefault | JsonIgnoreCondition.WhenWritingNull)]
+    public int? HorseId { get; set; } // FK to Samurai Table
+    //[JsonIgnore]
+    // så har du sikkert et problem....
+    public Horse? Horse { get; set; }  // Navigation property = new Horse();
 }
 }
 

@@ -6,8 +6,9 @@ using Samurai001.Repository.Models;
 
 namespace Samurai001.API.Controllers
 {
+    //Attribute / DataAnnotation - regelsæt
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] // model.Isvalid
     public class SamuraiController : ControllerBase
     {
         public IRepository<Samurai> repository { get; set; }
@@ -46,6 +47,16 @@ namespace Samurai001.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Samurai>> Create(Samurai obj)
         {
+            int t = 0;
+            // Samurai tempObj = obj{Id:3, Name: "Hansi", Desc: "Worst....", Age: 13}
+            // context.samurai.add(tempobj);
+            // context.savechanges();
+            // tempobj.horse = "the mustang" 
+            // 1 Horse obj => variable assignment
+            // 1 List => LINQ udtryk eller foreach => variable assignment
+            // create samurai uden horse
+            // Tracke samuraiobjektet og dernæst "add horse"
+            // reference mellem samurai og den hest der allerede eksistere.
             try
             {
                 if (obj == null) return BadRequest("The object is null");

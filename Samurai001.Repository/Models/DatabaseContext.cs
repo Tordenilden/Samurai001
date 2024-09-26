@@ -22,7 +22,9 @@ namespace Samurai001.Repository.Models
         public DbSet<Battle> Battle { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { }
+        { 
+                
+                }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
